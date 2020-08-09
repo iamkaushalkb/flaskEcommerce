@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{{params['title']}}</title>
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/Shop/bmzlogo.png') }}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='img/images/apple-touch-icon.png') }}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <!-- app style -->
+    <link href="{{ url_for('static', filename='css/all.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/animate.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/baguetteBox.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/bootsnav.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/bootstrap-select.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/carousel-ticker.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/code_animate.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/responsive.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/superslides.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/jquery-ui.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/owl.carousel.min.css') }}" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="{{ url_for('static', filename='css/custom.css') }}" rel="stylesheet">
+</head>
+
+<body class="developer" style="background-color: #F5F5F5;">
+    <div class="messgae">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        <div class="alert alert-{{category}} alert-dismissible fade show" role="alert" style="padding-right:64.5rem;">
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </div>
+    <!--Navigation & Intro-->
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+            <li class="nav-item">
+                <a class="navbar-brand col-lg-2 mr-0 px-3 nav-link" href="/dashboard"><b>Branded Mobile Zone</b></a>
+                <button class="navbar-toggler d-md-none collapsed " type="button" data-toggle="collapse"
+                    data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </li>
+            <li class="nav-item">
+                <div class="btn-group dropdrown">
+                    <a class="nav-link  text-white" href="#" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        <b> <i class="fa fa-user" aria-hidden="true"></i> &nbsp;{{params['admin_user']}} </b>
+                    </a>
+                    <a href="#" class="nav-link text-white " data-toggle="modal" data-target="#help">
+                        <i class="fa fa-question" aria-hidden="true"></i> Help
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="navlink dropdown-item" href="/logout"> <i class="fa fa-arrow-left"
+                                aria-hidden="true"></i>&nbsp; Logout
+                        </a>
+                    </div>
+                </div>
+            </li>
+        </nav>
+        <div class="container-fluid">
+            <div class="row">
+                <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar navigation collapse">
+                    <div class="mobile_scroll pt-3 ">
+                        <ul class="nav flex-column ">
+                            <li class="nav-item tw">
+                                <a class="nav-link text-white" href="/dashboard">
+                                    <span data-feather="home"></span>
+                                    Dashboard
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="/managepost">
+                                    <span data-feather="home"></span>
+                                    Manage Post
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="/edit/0">
+                                    <span data-feather="home"></span>
+                                    Add Post
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="/manageproducts">
+                                    <span data-feather="shopping-cart"></span>
+                                    Manage Products
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="/editproduct/0">
+                                    <span data-feather="shopping-cart"></span>
+                                    Add Products
+                                </a>
+                            </li>
+                            <li class="nav-item text-white">
+                                <a class="nav-link text-white" href="/bookedproduct">
+                                    <span data-feather="users"></span>
+                                    Booked Products
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="/managecontact">
+                                    <span data-feather="users"></span>
+                                    Messages
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="/editsales/0">
+                                    <span data-feather="users"></span>
+                                    Add Sales
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="/managesales">
+                                    <span data-feather="users"></span>
+                                    Manage Sales
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="/managefeedback">
+                                    <span data-feather="users"></span>
+                                    Feedbacks
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                {% block body %} {% endblock %}
+            </div>
+        </div>
+    <!-- Start Footer  -->
+    <footer>
+        <div class="footer-main bg-dark">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <div class="footer-top-box">
+                            <h3>Business Time</h3>
+                            <ul class="list-time">
+                                <li>Sunday - Friday: 09.00am to 07.00pm</li>
+                                <li>Saturday: <span>Closed</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <div class="footer-top-box">
+                            <h3>Social Media</h3>
+                            <p>You can follow us on:</p>
+                            <ul>
+                                <li><a target="_blank" href="https://www.facebook.com/Branded-Mobile-Zone-115482336485465"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-widget">
+                            <h4>About {{params['title']}}</h4>
+                            <p>{{params['design']}}</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-link">
+                            <h4>Information</h4>
+                            <ul>
+                                <li><a href="/about">About Us</a></li>
+                                <li><a href="/productlist">Products</a></li>
+                                <li><a href="/contact">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-link-contact">
+                            <h4>Contact Us</h4>
+                            <ul>
+                                <li>
+                                    <p><i class="fas fa-map-marker-alt"></i>Address: Medical Line <br>Pokhara
+                                        <br> MahendraPool </p>
+                                </li>
+                                <li>
+                                    <p><i class="fas fa-phone-square"></i>Phone & Viber: <a href="tel:+977-9840097500">9840097500 </a></p>
+                                </li>
+                                <li>
+                                    <p><i class="fas fa-envelope"></i>Email: <a
+                                            href="mailto:contactinfo@gmail.com">brandedmobilezone71@gmail.com</a></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer  -->
+    <!-- Start copyright  -->
+    <div class="footer-copyright bg-dark">
+        <p class="footer-company">All Rights Reserved. &copy; 2020 <a href="#">Branded Mobile Zone</a> Design By :
+            <a href="#" ><i>Kaushal & Yashasvi Tiwari</i></a></p>
+    </div>
+    <!-- End copyright  -->
+        <!-- ALL JS FILES -->
+        <script src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+        <!-- ALL PLUGINS -->
+        <script src="{{ url_for('static', filename='js/jquery.superslides.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/bootstrap-select.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/inewsticker.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/bootsnav.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/images-loded.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/isotope.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/baguetteBox.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/form-validator.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/contact-form-script.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+        <!-- Tiney javascript -->
+        <script type="text/javascript" src="{{ url_for('static', filename='plugin/tinymce/tinymce.min.js') }}"></script>
+        <script type="text/javascript"
+            src="{{ url_for('static', filename='plugin/tinymce/init-tinymce.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/getdata.js') }}"></script>
+        <!-- Modal -->
+        <div class="modal fade" id="help" tabindex="-1" role="dialog" aria-labelledby="help"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="help">Having Problem?</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                      <h4>Having Problem With Data Entry?</h4>
+                      <li><p>You can Simply add data as your need and then click on submit and theb it will be registered.</p><br></li>
+                      <h4>Having Problem With Search?</h4>
+                      <li><p>You can Simply search data as from search bar and result will be ahown according to data entered.</p><br></li>
+                      <h4>Having Problem With Icons?</h4>
+                      <p><i class="fa fa-eyedropper" aria-hidden="true"></i> --> It is uesd to edit the content </p>
+                      <p><i class="fa fa-trash" aria-hidden="true"></i> --> It is uesd to delete the content</p>
+                      <p><i class="fa fa-eye" aria-hidden="true"></i> --> It is uesd to view details the content</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+
+</html>

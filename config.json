@@ -1,0 +1,26 @@
+{
+  "params": {
+    "local_server": "True",
+    "local_uri": "mysql://root:@localhost/bmz",
+    "prod_uri": "mysql://root:@localhost/bmz",
+    "fb_url": "https://facebook.com/iamkaushalkb",
+    "tw_url": "https://twitter.com/iamkaushalkb",
+    "ig_url": "https://instagram.com/iamkaushalkb",
+    "title": "Branded Mobile Zone",
+    "ftitle": "Want an outstanding project?",
+    "fsubtitle": "Just send me a message!",
+    "slogan": "Quality at the best prices.",
+    "gmail-user": "brandedmobilezone71@gmail.com",
+    "gmail-password": "mobilezone321",
+    "no_of_posts": 3,
+    "no_of_product": 4,
+    "no_of_d": 9,
+    "admin_user": "brandedmobilezone71@gmail.com",
+    "admin_password": "mobilezone321",
+    "research": "Branded Mobile Zone  gives you a chance to quickly and easily find the phone you want and have it delivered to your home in less time, regardless of your location.",
+    "design": "We have been in the business for quite a while now, and it that time we have not only managed to make close relationships with numerous suppliers all over the world, but also to recognize what people need. This means that we are always able to offer all the latest phones, great prices, reliable service, fast delivery and premium customer support.",
+    "development": "Basically Design is done according to clients need and projects need.",
+    "quote": " Design is not just what it looks like and feels like. Design is how it works.",
+    "quote_author": "~ Steve Jobs"
+  }
+}

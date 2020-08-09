@@ -1,0 +1,5 @@
+flask
+flask-mail
+flask-mysqldb
+flask-sqlalchemy
+flask-uploads

@@ -1,0 +1,331 @@
+.plus-box {
+    margin-top: 29px;
+  }
+  
+  .info-box .light {
+    color: #000;
+  }
+  .info-box {
+    color: #fff;
+    display: block;
+    min-height: 90px;
+    background: #fff;
+    width: 100%;
+    border-radius: .2rem;
+    margin-bottom: 15px;
+    box-shadow: 0 0px 1px 0 rgba(60,64,67,.3),0 1px 1px 1px rgba(60,64,67,.15);
+    -webkit-box-shadow: 0 0px 1px 0 rgba(60,64,67,.3),0 1px 1px 1px rgba(60,64,67,.15);
+    -moz-box-shadow: 0 1px 2px 0 rgba(60,64,67,.3),0 1px 3px 1px rgba(60,64,67,.15);
+  }
+  .info-box small {
+    font-size:14px
+  }
+  .info-box-icon {
+    border-top-left-radius: .2rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: .2rem;
+    display: block;
+    float: left;
+    height: 100%;
+    width: 90px;
+    text-align: center;
+    font-size: 45px;
+    line-height: 90px;
+    border-right: 1px solid rgba(0,0,0,0.2);
+  }
+  .info-box-icon i {
+    border-radius: 60px;
+  }
+  .info-box-icon>img {
+    max-width:100%
+  }
+  .info-box-content {
+    padding:15px 10px;
+    margin-left:90px;
+  }
+  .info-box-number {
+    display:block;
+    font-weight:bold;
+    font-size:25px;
+  }
+  .info-box-text {
+    display:block;
+    font-size:12px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis
+  }
+  .info-box-text {
+    text-transform:uppercase;
+    color: white;
+    font-style: oblique;
+    font-weight: bolder;
+  }
+  .info-box-more {
+    display:block
+  }
+  .info-box.bg-green {
+    background-color: #22e633 !important;
+    background: -webkit-linear-gradient(45deg,#22e633,#22e633) !important;
+    background: linear-gradient(45deg,#22e633,#22e633) !important;
+  }
+  .info-box.bg-mid {
+    background-color: #08a777 !important;
+    background: -webkit-linear-gradient(45deg,#08a777,#08a777) !important;
+    background: linear-gradient(45deg,#08a777,#08a777) !important;
+  }
+  .info-box.bg-red {
+    background-color: #d82724 !important;
+    background: -webkit-linear-gradient(45deg,#e01212,#ff0000) !important;
+    background: linear-gradient(45deg,#ff2929,#ff2104) !important;
+  }
+  .info-box.bg-warning {
+    background-color: #ffbf00 !important;
+    background: -webkit-linear-gradient(45deg,#ffbf00,#ffbf00) !important;
+    background: linear-gradient(45deg,#ffbf00,#ffbf00) !important;
+  }
+  .info-box.bg-theme {
+    background-color: #0288d1 !important;
+    background: -webkit-linear-gradient(45deg,#0288d1,#26c6da) !important;
+    background: linear-gradient(45deg,#0288d1,#26c6da) !important;
+  }
+  .grad {
+    background: rgb(255, 123, 0);
+    background: linear-gradient(90deg, rgb(255, 123, 0) 0%, rgb(255, 123, 0) 0%,rgb(255, 123, 0) 100%); 
+}
+
+.tw{
+  color: beige;
+}
+table {
+  border-collapse: collapse
+}
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #000;
+  background: #fff;
+}
+
+.table td, .table th {
+  padding: 1rem 1.5rem;
+  vertical-align: middle;
+  border-top: 1px solid #394e5a42;
+  
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #ccc;
+}
+
+.table tbody+tbody {
+  border-top: 2px solid #394e5a
+}
+
+.table-sm td,.table-sm th {
+  padding: .75rem 1rem
+}
+
+.table-bordered {
+  border: 1px solid #394e5a
+}
+
+.table-bordered td, .table-bordered th {
+  border: 1px solid #ccc;
+}
+
+.table-bordered thead td,.table-bordered thead th {
+  border-bottom-width: 2px;
+}
+
+.table-borderless tbody+tbody,.table-borderless td,.table-borderless th,.table-borderless thead th {
+  border: 0
+}
+
+.table-striped tbody tr:nth-of-type(2n+1) {
+  background-color: #1a73e8;
+}
+
+.table-striped tbody tr:nth-of-type(odd) th, .table-striped tbody tr:nth-of-type(odd) td {
+  color: #fff;
+}
+
+.table-hover tbody tr:hover {
+  color: #000;
+  background-color: #e8f0fe;
+}
+
+.table-primary,.table-primary>td,.table-primary>th {
+  background-color: #c3e6fe
+}
+
+.table-primary tbody+tbody,.table-primary td,.table-primary th,.table-primary thead th {
+  border-color: #8fd0fd
+}
+
+.table-hover .table-primary:hover {
+  background-color: #aadcfe
+}
+
+.table-hover .table-primary:hover>td,.table-hover .table-primary:hover>th {
+  background-color: #aadcfe
+}
+
+.table-secondary,.table-secondary>td,.table-secondary>th {
+  background-color: #d6d8db
+}
+
+.table-secondary tbody+tbody,.table-secondary td,.table-secondary th,.table-secondary thead th {
+  border-color: #b3b7bb
+}
+
+.table-hover .table-secondary:hover {
+  background-color: #c8cbcf
+}
+
+.table-hover .table-secondary:hover>td,.table-hover .table-secondary:hover>th {
+  background-color: #c8cbcf
+}
+
+.table-success,.table-success>td,.table-success>th {
+  background-color: #c4efd7
+}
+
+.table-success tbody+tbody,.table-success td,.table-success th,.table-success thead th {
+  border-color: #91e1b4
+}
+
+.table-hover .table-success:hover {
+  background-color: #b0eac9
+}
+
+.table-hover .table-success:hover>td,.table-hover .table-success:hover>th {
+  background-color: #b0eac9
+}
+
+.table-info,.table-info>td,.table-info>th {
+  background-color: #c3e6fe
+}
+
+.table-info tbody+tbody,.table-info td,.table-info th,.table-info thead th {
+  border-color: #8fd0fd
+}
+
+.table-hover .table-info:hover {
+  background-color: #aadcfe
+}
+
+.table-hover .table-info:hover>td,.table-hover .table-info:hover>th {
+  background-color: #aadcfe
+}
+
+.table-warning,.table-warning>td,.table-warning>th {
+  background-color: #ffedc1
+}
+
+.table-warning tbody+tbody,.table-warning td,.table-warning th,.table-warning thead th {
+  border-color: #ffde8c
+}
+
+.table-hover .table-warning:hover {
+  background-color: #ffe6a8
+}
+
+.table-hover .table-warning:hover>td,.table-hover .table-warning:hover>th {
+  background-color: #ffe6a8
+}
+
+.table-danger,.table-danger>td,.table-danger>th {
+  background-color: #f8c8c6
+}
+
+.table-danger tbody+tbody,.table-danger td,.table-danger th,.table-danger thead th {
+  border-color: #f19896
+}
+
+.table-hover .table-danger:hover {
+  background-color: #f5b2af
+}
+
+.table-hover .table-danger:hover>td,.table-hover .table-danger:hover>th {
+  background-color: #f5b2af
+}
+
+.table-light,.table-light>td,.table-light>th {
+  background-color: #fbfcfd
+}
+
+.table-light tbody+tbody,.table-light td,.table-light th,.table-light thead th {
+  border-color: #f7fafc
+}
+
+.table-hover .table-light:hover {
+  background-color: #eaeff5
+}
+
+.table-hover .table-light:hover>td,.table-hover .table-light:hover>th {
+  background-color: #eaeff5
+}
+
+.table-dark,.table-dark>td,.table-dark>th {
+  background-color: #c0c3c5
+}
+
+.table-dark tbody+tbody,.table-dark td,.table-dark th,.table-dark thead th {
+  border-color: #8a9094
+}
+
+.table-hover .table-dark:hover {
+  background-color: #b3b6b9
+}
+
+.table-hover .table-dark:hover>td,.table-hover .table-dark:hover>th {
+  background-color: #b3b6b9
+}
+
+.table-active,.table-active>td,.table-active>th {
+  background-color: #394e5a
+}
+
+.table-hover .table-active:hover {
+  background-color: #2f404a
+}
+
+.table-hover .table-active:hover>td,.table-hover .table-active:hover>th {
+  background-color: #2f404a
+}
+
+.table .thead-dark th {
+  color: #9bbcd1;
+  color: #dcf3ff;
+  background-color: #1a73e8;
+  border-color: #1a73e8;
+}
+
+.table .thead-light th {
+  color: #000;
+}
+
+.table-dark {
+  color: #fff;
+  background-color: #040404;
+}
+
+.table-dark td, .table-dark th, .table-dark thead th {
+  border-color: #ffffff2e;
+}
+
+.table-dark.table-bordered {
+  border: 0
+}
+
+.table-dark.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(255,255,255,.05)
+}
+
+.table-dark.table-hover tbody tr:hover {
+  color: #9bbcd1;
+  background-color: rgba(255,255,255,.075)
+}

@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+{% block aboutactive %}active{% endblock aboutactive %}
+{% block body %}
+<div class="about-box-main">
+  <div class="container">
+      <div class="row">
+  <div class="col-lg-6">
+              <div class="banner-frame"> <img class="img-fluid" src="{{ url_for('static', filename='img/Shop/bmzlogo.png') }}" alt="Branded Mobile Zone" />
+              </div>
+          </div>
+          <div class="col-lg-6">
+              <h2 class="noo-sh-title-top">We are <span>{{params['title']}}</span></h2>
+              <p>{{params['research']}}</p>
+              <p>{{params['design']}}</p>
+          </div>
+      </div>
+      <div class="row my-5">
+          <div class="col-sm-6 col-lg-4">
+              <div class="service-block-inner">
+                  <h3>We are Trusted</h3>
+                  <p>There will be no fraud and scams from us we are safe to trust</p>
+              </div>
+          </div>
+          <div class="col-sm-6 col-lg-4">
+              <div class="service-block-inner">
+                  <h3>We are Professional</h3>
+                  <p>We provide very efficent and better service to Customers.</p>
+              </div>
+          </div>
+          <div class="col-sm-6 col-lg-4">
+              <div class="service-block-inner">
+                  <h3>We are Expert</h3>
+                  <p>We are from very long time in this business so we are Expert</p>
+              </div>
+          </div>
+      </div>
+      <div class="row my-4">
+          <div class="col-12">
+              <h2 class="noo-sh-title">Meet Our Team</h2>
+          </div>
+          <div class="col-sm-6 col-lg-4">
+              <div class="hover-team">
+                  <div class="our-team"> <img src="{{url_for('static',filename='img/staff/puspa.jpg')}}" alt="Puspa Raj Tripathi" style="height: 350px;">
+                      <div class="team-content">
+                          <h3 class="title">Puspa Raj Tripathee</h3> <span class="post">Owner</span> </div>
+                      <ul class="social">
+                          <li>
+                              <a target="_blank" href="https://www.facebook.com/puspa.milan.3" class="fab fa-facebook"></a>
+                          </li>
+                      </ul>
+                      <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
+                  </div>
+                  <hr class="my-0"> 
+                </div>
+          </div>
+          <div class="col-sm-6 col-lg-4">
+              <div class="hover-team">
+                  <div class="our-team"> <img src="{{url_for('static',filename='img/staff/krishna.jpg')}}" alt="Krishna Prassad Tripathi"  style="height: 350px;">
+                      <div class="team-content">
+                          <h3 class="title">Krishna Prasad Tripathee</h3> <span class="post">Staff</span> </div>
+                      <ul class="social">
+                          <li>
+                              <a target="_blank" href="https://www.facebook.com/krishna.tripathee.1" class="fab fa-facebook"></a>
+                          </li>
+                      </ul>
+                      <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
+                  </div>
+                  <hr class="my-0"> </div>
+          </div>
+          <div class="col-sm-6 col-lg-4">
+              <div class="hover-team">
+                  <div class="our-team"> <img src="{{url_for('static',filename='img/staff/sanjiv.jpg')}}" alt="Sanjiv Jalari"  style="height: 350px;">
+                      <div class="team-content">
+                          <h3 class="title">Sanjiv Jalari</h3> <span class="post">Mobile Technician</span> </div>
+                      <ul class="social">
+                          <li>
+                              <a href="https://www.facebook.com/sanjiv.jalari" class="fab fa-facebook" target="_blank"></a>
+                          </li>
+                      </ul>
+                      <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
+                  </div>
+                  <hr class="my-0"> </div>
+          </div>
+      </div>
+  </div>
+</div>
+{% endblock %}

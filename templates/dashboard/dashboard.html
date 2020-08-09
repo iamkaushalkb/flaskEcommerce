@@ -1,0 +1,137 @@
+{% extends "dashboard/layout.html" %}
+{% block dashboardactive %}active{% endblock dashboardactive %}
+{% block body %}
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+    <h1 class="h2">Dashboard</h1>
+
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="info-box bg-green">
+        <span class="info-box-icon">
+          <i class="fa fa-mobile" aria-hidden="true"></i>
+        </span>
+
+        <div class="info-box-content">
+          <span class="info-box-text">Total Products</span>
+          <span class="info-box-number">{{ product|length }}</span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="info-box bg-red">
+        <span class="info-box-icon">
+          <i class="fa fa-comments"></i>
+        </span>
+
+        <div class="info-box-content">
+          <span class="info-box-text">Total Feedbacks</span>
+          <span class="info-box-number">{{ feedback|length }}</span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="info-box bg-warning">
+        <span class="info-box-icon">
+          <i class="fa fa-server"></i>
+        </span>
+
+        <div class="info-box-content">
+          <span class="info-box-text">Total Booked Product</span>
+          <span class="info-box-number">{{ bookproduct|length }}</span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="info-box bg-mid">
+        <span class="info-box-icon">
+          <i class="fa fa-envelope"></i>
+        </span>
+
+        <div class="info-box-content">
+          <span class="info-box-text">Total Messages</span>
+          <span class="info-box-number">{{ contacts|length }}</span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="info-box bg-primary">
+        <span class="info-box-icon">
+          <i class="fa fa-newspaper-o"></i>
+        </span>
+
+        <div class=" info-box-content">
+            <span class="info-box-text">Total Posts</span>
+            <span class="info-box-number">{{ posts|length }}</span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="info-box grad">
+      <span class="info-box-icon">
+        <i class="fa fa-area-chart" aria-hidden="true"></i>
+      </span>
+      <div class="info-box-content">
+        <span class="info-box-text">Total Sales
+        <span class="info-box-text" style="color:white; font-size: 25px;"><b>{{sales|length}}
+          </b> </span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+  </div>
+  </div>      <div class="row my-4">
+    <div class="col-12">
+        <h2 class="noo-sh-title">Meet Our Team</h2>
+    </div>
+    <div class="col-sm-6 col-lg-4">
+        <div class="hover-team">
+            <div class="our-team"> <img src="{{url_for('static',filename='img/staff/puspa.jpg')}}" alt="Puspa Raj Tripathi" style="height: 350px;">
+                <div class="team-content">
+                    <h3 class="title">Puspa Raj Tripathee</h3> <span class="post">Owner</span> </div>
+                <ul class="social">
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/puspa.milan.3" class="fab fa-facebook"></a>
+                    </li>
+                </ul>
+                <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
+            </div>
+            <hr class="my-0"> 
+          </div>
+    </div>
+    <div class="col-sm-6 col-lg-4">
+        <div class="hover-team">
+            <div class="our-team"> <img src="{{url_for('static',filename='img/staff/krishna.jpg')}}" alt="Krishna Prassad Tripathi"  style="height: 350px;">
+                <div class="team-content">
+                    <h3 class="title">Krishna Prasad Tripathee</h3> <span class="post">Staff</span> </div>
+                <ul class="social">
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/krishna.tripathee.1" class="fab fa-facebook"></a>
+                    </li>
+                </ul>
+                <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
+            </div>
+            <hr class="my-0"> </div>
+    </div>
+    <div class="col-sm-6 col-lg-4">
+        <div class="hover-team">
+            <div class="our-team"> <img src="{{url_for('static',filename='img/staff/sanjiv.jpg')}}" alt="Sanjiv Jalari"  style="height: 350px;">
+                <div class="team-content">
+                    <h3 class="title">Sanjiv Jalari</h3> <span class="post">Mobile Technician</span> </div>
+                <ul class="social">
+                    <li>
+                        <a href="https://www.facebook.com/sanjiv.jalari" class="fab fa-facebook" target="_blank"></a>
+                    </li>
+                </ul>
+                <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
+            </div>
+            <hr class="my-0"> </div>
+    </div>
+</div>
+</main>
+{% endblock %}

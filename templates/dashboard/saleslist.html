@@ -1,0 +1,52 @@
+{% extends "dashboard/layout.html" %}
+{% block body %}
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+    <div
+        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Dashboard</h1>
+    </div>
+    <div class="container-fluid" id="product">
+        <h3>Manage Sales</h3>
+        <form class="search" action="/searchsales" method="POST">
+            <label><i class="fas fa-search" aria-hidden="true"></i> You Can Search here..</label>
+            <input type="text" class="form-control" placeholder="Search..." name="searchsales">
+        </form>
+        <div style="overflow-x: auto; width: 100%;">
+            <table class="table">
+                <thead class="black white-text">
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Brand</th>
+                        <th scope="col">Number of Mobiles</th>
+                        <th scope="col">Total Sales</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for sales in sales %}
+                    <tr>
+                        <th scope="row">{{sales.id}}</th>
+                        <td>{{sales.brand}}</td>
+                        <td>{{sales.no_of_mobiles}}</td>
+                        <td>{{sales.total_sales}}</td>
+                        <td>{{sales.date}}</td>
+                        <td><a href="/editsales/{{sales.id}}">
+                                <buttom class="btn btn-primary"style="border-radius: 20px;"><i class="fa fa-eyedropper" aria-hidden="true"></i></button>
+                            </a></td>
+                        <td><a href="/deletesales/{{sales.id}}">
+                                <buttom class="btn btn-primary"style="border-radius: 20px;"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                            </a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="text-center">
+            <a class="previous btn btn-primary" href="{{prevsales}}"><i class="fa fa-angle-left" aria-hidden="true"></i></a> <a class="next btn btn-primary"
+                href="{{nextsales}}"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        </div>
+    </div><br>
+</main>
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+{% block contactactive %} active {% endblock contactactive %}
+{% block body %}
+<!-- Contact form -->
+<div id="contact" class="container">">
+    <h2 class="text-center text-uppercase wow fadeIn" data-wow-delay="0.2s"> <strong>GET IN TOUCH</strong>
+    </h2><br>
+    <div class="row wow fadeIn" data-wow-delay="0.4s">
+        <div class="col-md-8 mb-5">
+            <form action="/contact" method="POST">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <div class="md-form mb-0">
+                                <label for="name" class="">Your name</label>
+                                <input type="text" id="name" class="form-control" name="name" required>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <div class="md-form mb-0">
+                                <label for="email" class="">Your email</label>
+                                <input type="email" id="email" class="form-control" name="email" required>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="md-form mb-0">
+                            <label for="subject" class="">Subject</label>
+                            <input type="text" id="subject" class="form-control" name="subject" required>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="md-form mb-0">
+                            <label for="message">Your message</label>
+                            <textarea type="text" id="message" class="md-textarea form-control" rows="3" name="msg"
+                                required></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center text-md-left mt-4"> <button type="submit" class="btn hvr-hover text-white">Send</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-4">
+            <ul class="contact-icons list-unstyled text-center">
+                <li>
+                    <h1><i class="fas fa-map-marker mb-4" aria-hidden="true"></i></h1>
+                    <p>Medical Line, Mahendrapool ,Pokhara</p>
+                </li><br>
+                <li>
+                    <h1><i class="fas fa-phone mb-4" aria-hidden="true"></i></h1>
+                    <p>9840097500</p>
+                </li><br>
+                <li>
+                    <h1><i class="fas fa-envelope mb-4" aria-hidden="true"></i></h1>
+                    <p>brandedmobilezone71@gmail.com</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Contact form -->
+{% endblock %}

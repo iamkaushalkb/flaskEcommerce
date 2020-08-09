@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{{params['title']}}</title>
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/images/favicon.ico') }}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='img/images/apple-touch-icon.png') }}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <!-- app style -->
+    <link href="{{ url_for('static', filename='css/all.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/animate.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/baguetteBox.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/bootsnav.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/bootstrap-select.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/carousel-ticker.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/code_animate.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/responsive.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/superslides.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/jquery-ui.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/owl.carousel.min.css') }}" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="{{ url_for('static', filename='css/custom.css') }}" rel="stylesheet">
+</head>
+
+<body class="developer" style="background-color: #F5F5F5;">
+    <div class="messgae">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        <div class="alert alert-{{category}} alert-dismissible fade show" role="alert" style="padding-right:64.5rem;">
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </div>
+    <!--Navigation & Intro-->
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+            <a class="navbar-brand col-lg-2 mr-0 px-3 " href="/dashboard"><b>Branded Mobile Zone</b></a>
+            <button class="navbar-toggler d-md-none collapsed " type="button" data-toggle="collapse"
+                data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <li  class="nav-item">
+                <a href="/dashboard" class="nav-link text-white">
+                   Back to Dashboard
+                </a>
+            </li>
+        </nav>
+<style>
+    .table td,
+    .table th {
+        padding: 1rem 1.5rem;
+        vertical-align: middle;
+        border-top: 1px solid #394e5a42;
+        padding-right: 380px;
+    }
+</style>
+<section class="content">
+    <div class="container"><br>
+        <h1>Product View</h1>
+        <div class="ml-auto">
+            <a href="/editproduct/{{product.id}}" class="btn btn-primary">
+                Configure / Edit
+            </a>
+        </div>
+<br>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-bordered tbll">
+                    <tbody>
+                        <tr>
+                            <td class="bg-light">
+                                Image
+                            </td>
+                            <td>
+                                <img src="{{url_for('static',filename='img/' + product.img)}}" class="img-fluid"
+                                    style="width: 100px; height: 100px;" alt=" ">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="bg-light">
+                                BRAND
+                            </td>
+                            <td>
+                                {{product.brand}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="bg-light">
+                                MODEL
+                            </td>
+                            <td>
+                                {{product.model}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="bg-light">
+                                PRICE
+                            </td>
+                            <td>
+                                <h5> <span class="badge badge-green">RS</span>&nbsp;{{product.price}}</h5>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="bg-light">
+                                DESCRIPTION
+                            </td>
+                            <td>
+                                {% autoescape off %}{{ product.description }}{% endautoescape %}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ALL JS FILES -->
+        <script src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+        <!-- ALL PLUGINS -->
+        <script src="{{ url_for('static', filename='js/jquery.superslides.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/bootstrap-select.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/inewsticker.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/bootsnav.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/images-loded.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/isotope.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/baguetteBox.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/form-validator.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/contact-form-script.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+		<!-- Tiney javascript -->
+		<script type="text/javascript" src="{{ url_for('static', filename='plugin/tinymce/tinymce.min.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='plugin/tinymce/init-tinymce.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/getdata.js') }}"></script>
+    </body>
+
+
+</html>

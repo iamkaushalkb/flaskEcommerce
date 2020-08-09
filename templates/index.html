@@ -1,0 +1,231 @@
+{% extends "layout.html" %}
+{% block homeactive %} active {% endblock homeactive %}
+{% block body %}
+<main style="overflow: hidden; ">
+    <!-- Start Slider -->
+    <div id="slides-shop" class="cover-slides">
+        <ul class="slides-container">
+            <li class="text-center">
+                <img src="{{url_for('static',filename='img/Shop/bmz1.jpg')}}" alt="{{params['title']}}">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="m-b-20"><strong>Welcome To <br> {{params['title']}}</strong></h1>
+                            <p class="m-b-40">{{params['slogan']}}</p>
+                            <p><a class="btn hvr-hover" href="bookproduct">Book Now</a></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="text-center">
+                <img src="{{url_for('static',filename='img/Shop/bmz2.jpg')}}" alt="{{params['title']}}">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="m-b-20"><strong>Contact Us</strong></h1>
+                            <p class="m-b-40">We Give You {{params['slogan']}}</p>
+                            <p><a class="btn hvr-hover" href="/contact">Contact Now</a></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="text-center">
+                <img src="{{url_for('static',filename='img/Shop/bmz4.jpg')}}" alt="{{params['title']}}">
+                <div class="container">
+                    <div class="row">
+                    </div>
+                </div>
+            </li>
+            <li class="text-center">
+                <img src="{{url_for('static',filename='img/Shop/bmz6.jpg')}}" alt="{{params['title']}}">
+                <div class="container">
+                    <div class="row">
+                    </div>
+                </div>
+            </li>
+            <li class="text-center">
+                <img src="{{url_for('static',filename='img/Shop/bmz1.jpg')}}" alt="{{params['title']}}">
+                <div class="container">
+                    <div class="row">
+                    </div>
+                </div>
+            </li>
+            <li class="text-center">
+                <img src="{{url_for('static',filename='img/Shop/bmz3.jpg')}}" alt="{{params['title']}}">
+                <div class="container">
+                    <div class="row">
+                    </div>
+                </div>
+            </li>
+            <li class="text-center">
+                <img src="{{url_for('static',filename='img/Shop/bmz7.jpg')}}" alt="{{params['title']}}">
+                <div class="container">
+                    <div class="row">
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="slides-navigation">
+            <a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            <a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+        </div>
+    </div>
+    <!-- End Slider -->
+    <div class="row my-5">
+        <div class="col-lg-12">
+            <div class="title-all text-center">
+                <h1>Our Products</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
+            </div>
+            <div class="featured-products-box owl-carousel owl-theme">
+
+                {% for product in products %}
+                <div class="item">
+                    <div class="products-single fix">
+                        <div class="why-text">
+                            <div class="box-img-hover">
+                                <img src="{{url_for('static',filename='img/' + product.img)}}" class="product-fluid"
+                                    alt="{{product.model}}">
+                                <div class="mask-icon">
+                                    <a class="cart" href="/product/{{product.slug}}">Learn More</a>
+                                </div>
+                            </div>
+
+                            <h4>{{product.model}}</h4>
+                            <h5> RS {{product.price}}</h5>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+
+            </div>
+        </div>
+
+    </div>
+    <!-- Start Blog  -->
+    <div class="latest-blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-all text-center">
+                        <h1>Latest blog</h1>
+                        <p>from <strong>{{params['title']}}</strong></p><br>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="row card-deck">
+                    {% for post in posts %}
+                    <div class="col-md-4">
+                        <div class="blog-box">
+
+                            <div class="blog-content">
+                                <div class="title-blog">
+                                    <h3>{{post.title}}</h3>
+                                    <p>
+                                        {% autoescape off %}{{post.content[0:143]}}...{% endautoescape %}</p>
+                                </div><br>
+                                <div class="mask-icon" style="left: 100px;">
+                                    <a class="cart" href="/post/{{post.slug}}">Learn More</a>
+                                </div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor%}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Blog  -->
+    <div class="container">
+        <div class="row my-5 mx-10">
+            <div class="col-md-3">
+                <div class="card card-outline-secondary my-4">
+                    <div class="card-header">
+                        <h2>Some Reviews</h2>
+                    </div>
+                    <div class="card-body">
+                        {% for feedback in feedbacks %}
+                        <div class="media mb-3">
+                            <div class="mr-2">
+                                <img class="rounded-circle border"
+                                    src="{{url_for('static',filename='img/' + feedback.img)}}" alt="{{feedback.name}}"
+                                    style="width: 64px; height: 64px;">
+                            </div>
+                            <div class="media-body">
+                                <p><b>{{feedback.email}}</b></p>
+                                <p>{{feedback.feedback}}</p>
+                                <small class="text-muted">Posted by {{feedback.name}} on {{feedback.date}}</small>
+                            </div>
+                        </div>
+                        <hr>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <!--Section heading-->
+                <h2 class="h1-responsive font-weight-bold text-center my-4">Give Feedback</h2>
+                <!--Section description-->
+                <p class="text-center w-responsive mx-auto mb-5">Do you have any Feedback?
+                    <!--Grid column-->
+                <form id="feedback-form" method="POST" action="/feedback" enctype="multipart/form-data">
+                    <!--Grid row-->
+                    <div class="row">
+                        <!--Grid column-->
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <label for="name" class="">Your name</label>
+                                <input type="text" id="name" name="name" class="form-control" required>
+                            </div>
+                        </div>
+                        <!--Grid column-->
+                        <!--Grid column-->
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <label for="email" class="">Your email</label>
+                                <input type="text" id="email" name="email" class="form-control" required>
+                            </div>
+                        </div>
+                        <!--Grid column-->
+                        <div class="col-md-12">
+                            <div class="md-form">
+                                <label for="msg">Your Feedback</label>
+                                <textarea type="text" id="msg" name="msg" rows="2" class="form-control md-textarea"
+                                    required></textarea>
+                            </div>
+                        </div>
+                        <div class="md-form mb-0">
+                            <label for="img">Choose Your Photo</label><br>
+                            <input type="file" id="filename" name="img" required id="img">
+                        </div><br>
+
+                    </div>
+                    <div class="text-center text-md-left mt-4"> <button type="submit"
+                            class="btn hvr-hover text-white">Submit</button>
+                    </div>
+                    <!--Grid column-->
+            </div>
+
+            </form>
+            <!--Grid column-->
+        </div>
+    </div>
+    <!-- Start Categories  -->
+    <div class="categories-shop">
+        <div class="container">
+            <h2 class="h1-responsive font-weight-bold text-center my-4">Our Location</h2>
+            <div class="shop-cat-box">
+                <img class="img-fluid" src="{{url_for('static',filename='img/Shop/map.png')}}" alt="Map" />
+                <a class="btn hvr-hover" target="_blank"
+                    href="https://www.google.com/maps/place/Branded+Mobile+Zone/@28.2232464,83.9884963,17z/data=!3m1!4b1!4m5!3m4!1s0x39959448d61a4b21:0x28880e91057f0c70!8m2!3d28.2232417!4d83.990685">Visit
+                    Us</a>
+            </div>
+        </div>
+    </div>
+    <!-- End Categories -->
+
+</main>
+{% endblock %}

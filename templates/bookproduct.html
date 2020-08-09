@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+{% block bookhomeactive %}active{% endblock bookhomeactive %}
+{% block body %}
+<main role="main" class="container-fluid">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center border-bottom">
+        <h1 class="h2">Book Your Product</h1>
+    </div>
+    <div id="contact" class="container-fluid">
+        <section class="section contact-section mt-4 mb-5">
+            <h4 class="text-center text-uppercase  wow fadeIn" data-wow-delay="0.2s">Enter the Following detail
+                to book.</h4>
+            <div class="fadeIn" data-wow-delay="0.4s">
+                <form action="/bookproduct" method="POST">
+                    <div class="md-form mb-0">
+                        <div class="md-form mb-0">
+                            <label for="name" class="">Name</label>
+                            <input type="text" id="name" class="form-control" name="name">
+                        </div>
+                    </div>
+                    <div class="md-form mb-0">
+                        <div class="md-form mb-0">
+                            <label for="email" class="">Email</label>
+                            <input type="email" id="email" class="form-control" name="email">
+                        </div>
+                    </div>
+                    <div class="md-form mb-0">
+                        <div class="md-form mb-0">
+                            <label for="number" class="">Phone Number</label>
+                            <input type="number" id="number" class="form-control" name="phone">
+                        </div>
+                    </div>
+                    <div class="md-form mb-0">
+                        <div class="md-form mb-0">
+                            <label for="address" class="">
+                                Address
+                            </label>
+                            <input type="text" id="address" class="form-control" name="address">
+                        </div>
+                    </div>
+                    <div class="md-form mb-0">
+                        <label for="brand" class="">Product Brand</label><br>
+                        <select class="mdb-select md-form" name="brand">
+                            <option value="" disabled selected>Choose your option</option>
+                            {% for product in products %}
+                            <option name="brand">{{product.brand}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="md-form mb-0">
+                        <label for="model" class="">Product Model</label><br>
+                        <select class="mdb-select md-form" name="model">
+                            <option value="" disabled selected>Choose your option</option>
+                            {% for product in products %}
+                            <option name="model">{{product.model}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="md-form mb-0">
+                        <div class="md-form mb-0">
+                            <label class="">
+                                No of Products
+                            </label>
+                            <input type="number" class="form-control" name="no_of_products">
+                        </div>
+                    </div>
+                    <div class="text-center text-md-left mt-4"> <button type="submit" class="btn hvr-hover text-white">Book
+                        </button> </div>
+                </form>
+            </div>
+    </div>
+    </section>
+    </div>
+</main>
+{% endblock %}

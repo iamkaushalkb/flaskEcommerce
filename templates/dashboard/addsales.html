@@ -1,0 +1,54 @@
+{% extends "dashboard/layout.html" %}
+{% block body %}
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+    <div
+        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3  border-bottom">
+        <h1 class="h2">Dashboard</h1>
+    </div>
+    <!-- Contact form -->
+    <div id="contact" class="container">
+        <!--Section: Contact v.2-->
+        <section class="section contact-section mt-4 mb-5">
+            <!--Section heading-->
+            <h2 class="text-center text-uppercase  pt-5 wow fadeIn" data-wow-delay="0.2s">Add or Edit
+                Sales </h2>
+            <!--Section sescription-->
+            <div class="fadeIn" data-wow-delay="0.4s">
+                <!--First column-->
+                <form action="/editsales/{{id}}" method="POST">
+                    <div class="md-form mb-0">
+                        <label for="form51" class="">Brand</label><br>
+                        <select class="mdb-select md-form" name="brand" required>
+                            <option value="" disabled selected>Choose your option</option>
+                            {% for product in products %}
+                            <option name="brand">{{product.brand}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+            </div>
+            <div class="md-form mb-0">
+                <div class="md-form mb-0">
+                    <label for="form52" class="">No Of Mobiles</label>
+                    <input type="number" id="form52" class="form-control" name="no_of_mobiles"
+                        value="{{sales.no_of_mobiles}}" required>
+
+                </div>
+            </div>
+            <div class="md-form mb-0">
+                <label for="form51" class="">Total Sales</label>
+                <input type="number" id="form51" class="form-control" name="total_sales" value="{{sales.total_sales}}" required>
+
+            </div>
+            <div class="text-center text-md-left mt-4"> <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            </form>
+            <br>
+    </div>
+
+    </div>
+    </section>
+    <!--/Section: Contact v.2-->
+    </div>
+</main>
+{% endblock %}

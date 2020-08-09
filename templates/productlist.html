@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block productlistactive %}active{% endblock productlistactive %}
+{% block body %}
+
+<!-- Fourth container -->
+<div class="container">
+    <br>
+    <!-- Fourth section -->
+    <section id="works" class="section ">
+
+        <!-- Section title -->
+        <h2 class="text-center text-uppercase  wow fadeIn" data-wow-delay="0.2s">Our <strong>Products</strong>
+        </h2>
+
+        <!-- Section description -->
+        <p class="text-center w-responsive mx-auto wow fadeIn my-3">The Product that are available for now.</p>
+        <!-- First row -->
+                
+                </h5>
+                <form class="search" action="/searchproductlist" method="POST">
+                    <label><b><h5 class="text-center text-uppercase  wow fadeIn" data-wow-delay="0.2s"><i class="fas fa-search" aria-hidden="true"></i> You Can Search Product</h5></b></label>
+                    <input type="text" class="form-control"  name="searchproductlist">
+                </form><hr>
+        <div class="row ">
+            {% for product in products %}
+            <div class="col-md-4">
+                <div class="card mb-2">
+                    <img src="{{url_for('static',filename='img/' + product.img)}}" class="product-fluid " alt="{{product.model}}">
+                    <div class="card-body">
+                        <h4 class="card-title">{{product.brand}}</h4>
+                        <h4 class="card-text">{{product.model}}</h4>
+                        <a class="btn hvr-hover text-white" href="/product/{{product.slug}}">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor%}
+        </div>
+        <!-- /.First row -->
+    </section>
+    <!-- /.Fourth section -->
+    <hr>
+   <center> <a class="previous btn hvr-hover text-white" href="{{prevprodls}}"><i class="fa fa-angle-left" aria-hidden="true"></i></a> <a class="next btn hvr-hover text-white"
+    href="{{nextprodls}}"><i class="fa fa-angle-right" aria-hidden="true"></i></a></center><br>
+</div>
+<!-- /.Fourth container -->
+{% endblock %}

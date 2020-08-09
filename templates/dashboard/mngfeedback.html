@@ -1,0 +1,49 @@
+{% extends "dashboard/layout.html" %}
+{% block body %}
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+    <div
+        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Dashboard</h1>
+    </div>
+    <div class="container-fluid" id="feedback">
+        <h3>Manage Feedbacks</h3>
+        <form class="search" action="/searchfeedback" method="POST">
+            <label><i class="fas fa-search" aria-hidden="true"></i> You Can Search here..</label>
+            <input type="text" class="form-control" placeholder="Search..." name="searchfeedback">
+        </form>
+        <div style="overflow-x: auto; width: 100%;">
+            <table class="table">
+                <thead class="black white-text">
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col" style="width: 100px;">Content</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for feedback in feedbacks %}
+                    <tr>
+                        <th scope="row">{{feedback.id}}</th>
+                        <td>{{feedback.name}}</td>
+                        <td>{{feedback.email}}</td>
+                        <td style="width: 100%;">{{feedback.feedback}}</td>
+                        <td>{{feedback.date}}</td>
+                        <td><a href="/deletefeedback/{{feedback.id}}">
+                                <buttom class="btn btn-primary"style="border-radius: 20px;"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                            </a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="text-center">
+            <a class="previous btn btn-primary" href="{{prevfeedmg}}"><i class="fa fa-angle-left" aria-hidden="true"></i></a> <a class="next btn btn-primary"
+                href="{{nextfeedmg}}"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        </div>
+    </div><br>
+</main>
+{% endblock %}

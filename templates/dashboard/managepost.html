@@ -1,0 +1,55 @@
+{% extends "dashboard/layout.html" %}
+{% block body %}
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+    <div
+        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Dashboard</h1>
+    </div>
+    <div class="container-fluid" id="post">
+        <h3>Manage Posts</h3>
+        <form class="search" action="/searchpost" method="POST">
+            <label><i class="fas fa-search" aria-hidden="true"></i> You Can Search here..</label>
+            <input type="text" class="form-control" placeholder="Search..." name="searchpost">
+        </form>
+        <div style="overflow-x: auto; width: 100%;">
+            <table class="table">
+                <thead class="black white-text">
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Tag Line</th>
+                        <th scope="col">Slug</th>
+                        <th scope="col" style="width: 100px;">Content</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for post in posts %}
+                    <tr>
+                        <th scope="row">{{post.id}}</th>
+                        <td>{{post.title}}</td>
+                        <td>{{post.tagline}}</td>
+                        <td>{{post.slug}}</td>
+                        <td style="width: 100%;">{% autoescape off %}{{post.content[0:243]}}...{% endautoescape %}</td>
+                        <td>{{post.date}}</td>
+                        <td><a href="/edit/{{post.id}}">
+                                <buttom class="btn btn-primary" style="border-radius: 20px;"><i class="fa fa-eyedropper" aria-hidden="true"></i></button>
+                            </a></td>
+                        <td><a href="/delete/{{post.id}}">
+                                <buttom class="btn btn-primary" style="border-radius: 20px;"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                            </a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="text-center">
+            <a class="previous btn btn-primary" href="{{prevpmg}}"><i class="fa fa-angle-left" aria-hidden="true"></i></a> <a class="next btn btn-primary"
+                href="{{nextpmg}}"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        </div><br>
+    </div>
+</main>
+{% endblock %}

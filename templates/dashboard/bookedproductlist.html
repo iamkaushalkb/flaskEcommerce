@@ -1,0 +1,56 @@
+{% extends "dashboard/layout.html" %}
+{% block body %}
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+    <div
+        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Dashboard</h1>
+    </div>
+    <div class="container-fluid" id="post">
+        <h3>Manage Booked Product List</h3>
+        <form class="search" action="/searchbookedproduct" method="POST">
+            <label><i class="fas fa-search" aria-hidden="true"></i> You Can Search here..</label>
+            <input type="text" class="form-control" placeholder="Search..." name="searchbookedproduct">
+        </form>
+        <div style="overflow-x: auto; width: 100%;">
+            <table class="table">
+                <thead class="black white-text">
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Brand</th>
+                        <th scope="col">Model</th>
+                        <th scope="col">No of Products</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for bookproduct in bookproducts %}
+                    <tr>
+                        <th scope="row">{{bookproduct.id}}</th>
+                        <td>{{bookproduct.name}}</td>
+                        <td>{{bookproduct.email}}</td>
+                        <td>{{bookproduct.phone}}</td>
+                        <td>{{bookproduct.address}}</td>
+                        <td>{{bookproduct.brand}}</td>
+                        <td>{{bookproduct.model}}</td>
+                        <td>{{bookproduct.no_of_products}}</td>
+                        <td>{{bookproduct.date}}</td>
+                        <td><a href="/deletebookproduct/{{bookproduct.id}}">
+                                <buttom class="btn btn-primary" style="border-radius: 20px;"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                            </a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="text-center">
+            <a class="previous btn btn-primary" href="{{prevbookprodmg}}"><i class="fa fa-angle-left" aria-hidden="true"></i></a> <a class="next btn btn-primary"
+                href="{{nextbookprodmg}}"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        </div><br>
+    </div>
+</main>
+{% endblock %}

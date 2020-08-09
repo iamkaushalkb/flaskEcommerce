@@ -1,0 +1,57 @@
+{% extends "dashboard/layout.html" %}
+{% block body %}
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3  border-bottom">
+        <h1 class="h2">Dashboard</h1>
+    </div>
+    <!-- Contact form -->
+    <div id="contact" class="container">
+        <section class="section contact-section "><br>
+            <h2 class="text-center text-uppercase wow fadeIn" data-wow-delay="0.2s">Add Product
+            </h2>
+            <div class="fadeIn" data-wow-delay="0.4s">
+                <form action="/editproduct/{{id}}" method="POST" enctype="multipart/form-data" id="get-data-form">
+                    <div class="md-form mb-0">
+                        <div class="md-form mb-0">
+                            <label for="brand" class="">Brand</label>
+                            <input type="text" id="brand" class="form-control" name="brand" value="{{product.brand}}" >
+
+                        </div>
+                    </div>
+                    <div class="md-form mb-0">
+                        <div class="md-form mb-0">
+                            <label for="model" class="">Model</label>
+                            <input type="text" id="model" class="form-control" name="model" value="{{product.model}}" >
+
+                        </div>
+                    </div>
+                    <div class="md-form mb-0">
+                        <label class="">Price</label>
+                        <input type="number" class="form-control" name="price" value="{{product.price}}" >
+
+                    </div>
+                    <div class="md-form mb-0">
+                        <label for="slug" class="">Slug</label>
+                        <input type="text" id="form51" class="form-control" name="slug" value="{{product.slug}}" >
+
+                    </div>
+                    <div class="md-form mb-0">
+                        <label for="description" class="">Description</label>
+                        <textarea class="tinymce" name="description"
+                            value="{% autoescape off %}{{product.description}}{% endautoescape %}"></textarea>
+
+                    </div><br>
+                    <label for="img" class="">Choose Your Product Images</label><br>
+                    <input type='file' name='img' value="{{product.img}}" >
+                    <div class="text-center text-md-left mt-4"> <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+
+            </div>
+
+    </div>
+    </section><br>
+    <!--/Section: Contact v.2-->
+    </div>
+</main>
+{% endblock %}
